@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#7b2cbf">
+
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="nuvem-extra1"></div>
+        <div class="nuvem-extra2"></div>
+
+        <h1>Lista de Tarefas</h1>
+
+        <p class="contador">
+            Total de tarefas: <span id="total">0</span>
+        </p>
+
+        <div class="input-area">
+
+            <input
+                type="text"
+                id="tarefa"
+                placeholder="Digite uma tarefa">
+
+            <select id="categoria">
+                <option value="Escola">Escola</option>
+                <option value="Casa">Casa</option>
+                <option value="Trabalho">Trabalho</option>
+            </select>
+
+            <button onclick="adicionarTarefa()">
+                Adicionar
+            </button>
+
+        </div>
+
+        <div class="progresso-container">
+            <div id="barraProgresso"></div>
+        </div>
+
+        <p id="porcentagem">0% concluído</p>
+
+        <div class="caixa-tarefas">
+            <ul id="lista"></ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <div class="cloud cloud4"></div>
+
+</body>
+</html>

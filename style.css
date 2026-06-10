@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:linear-gradient(
+        180deg,
+        #b388ff,
+        #d6b8ff
+    );
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+}
+
+/* CAIXA PRINCIPAL */
+
+.container{
+    position:relative;
+    width:95%;
+    max-width:650px;
+    background:rgba(255,255,255,0.96);
+    padding:35px;
+    border-radius:50px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    backdrop-filter:blur(10px);
+    z-index:10;
+}
+
+/* TÍTULO */
+
+h1{
+    text-align:center;
+    color:#7b2cbf;
+    margin-bottom:15px;
+}
+
+/* CONTADOR */
+
+.contador{
+    text-align:center;
+    margin-bottom:20px;
+    font-weight:bold;
+    color:#555;
+}
+
+/* ÁREA DE ENTRADA */
+
+.input-area{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+input{
+    flex:1;
+    min-width:180px;
+    padding:12px;
+    border:2px solid #c77dff;
+    border-radius:12px;
+    outline:none;
+    transition:0.3s;
+}
+
+input:focus{
+    border-color:#7b2cbf;
+    box-shadow:0 0 10px rgba(123,44,191,.3);
+}
+
+select{
+    padding:12px;
+    border:2px solid #c77dff;
+    border-radius:12px;
+    outline:none;
+}
+
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:12px;
+    cursor:pointer;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.input-area button{
+    background:linear-gradient(135deg,#7b2cbf,#c77dff);
+}
+
+.input-area button:hover{
+    transform:scale(1.05);
+}
+
+/* BARRA DE PROGRESSO */
+
+.progresso-container{
+    width:100%;
+    height:20px;
+    background:#e9d8fd;
+    border-radius:20px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+#barraProgresso{
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#7b2cbf,#c77dff);
+    transition:0.4s;
+}
+
+#porcentagem{
+    text-align:center;
+    margin-top:8px;
+    color:#666;
+    font-weight:bold;
+}
+
+/* CAIXA DAS TAREFAS */
+
+.caixa-tarefas{
+    margin-top:20px;
+    background:#f8f0ff;
+    padding:20px;
+    border-radius:40px;
+    box-shadow:
+        inset 0 0 15px rgba(255,255,255,.8),
+        0 5px 15px rgba(0,0,0,.1);
+}
+
+ul{
+    list-style:none;
+}
+
+/* TAREFAS */
+
+li{
+    background:white;
+    margin-bottom:12px;
+    padding:15px;
+    border-radius:25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    animation:entrada .4s ease;
+}
+
+@keyframes entrada{
+    from{
+        opacity:0;
+        transform:translateY(-20px) scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* CATEGORIA */
+
+.categoria{
+    display:inline-block;
+    margin-top:5px;
+    padding:4px 10px;
+    background:#c77dff;
+    color:white;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* DATA */
+
+.data{
+    display:block;
+    margin-top:5px;
+    color:#777;
+    font-size:12px;
+}
+
+/* BOTÕES DAS TAREFAS */
+
+.acoes{
+    display:flex;
+    gap:5px;
+}
+
+.btn-ok{
+    background:linear-gradient(135deg,#52b788,#74c69d);
+}
+
+.btn-excluir{
+    background:linear-gradient(135deg,#ef476f,#ff758f);
+}
+
+.btn-ok:hover,
+.btn-excluir:hover{
+    transform:scale(1.08);
+}
+
+/* TAREFA CONCLUÍDA */
+
+.concluida{
+    text-decoration:line-through;
+    opacity:.6;
+}
+
+/* LISTA VAZIA */
+
+.vazio{
+    text-align:center;
+    color:#888;
+    padding:20px;
+}
+
+/* NUVENS DE FUNDO */
+
+.cloud{
+    position:absolute;
+    background:white;
+    border-radius:100px;
+    opacity:.75;
+    z-index:1;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:white;
+    border-radius:50%;
+}
+
+.cloud1{
+    width:180px;
+    height:60px;
+    top:8%;
+    left:5%;
+}
+
+.cloud1::before{
+    width:70px;
+    height:70px;
+    top:-30px;
+    left:25px;
+}
+
+.cloud1::after{
+    width:90px;
+    height:90px;
+    top:-40px;
+    left:80px;
+}
+
+.cloud2{
+    width:140px;
+    height:50px;
+    top:22%;
+    right:8%;
+}
+
+.cloud2::before{
+    width:60px;
+    height:60px;
+    top:-25px;
+    left:20px;
+}
+
+.cloud2::after{
+    width:80px;
+    height:80px;
+    top:-35px;
+    left:60px;
+}
+
+.cloud3{
+    width:220px;
+    height:70px;
+    bottom:10%;
+    left:8%;
+}
+
+.cloud3::before{
+    width:80px;
+    height:80px;
+    top:-30px;
+    left:30px;
+}
+
+.cloud3::after{
+    width:100px;
+    height:100px;
+    top:-40px;
+    left:100px;
+}
+
+.cloud4{
+    width:160px;
+    height:55px;
+    bottom:20%;
+    right:5%;
+}
+
+.cloud4::before{
+    width:70px;
+    height:70px;
+    top:-25px;
+    left:25px;
+}
+
+.cloud4::after{
+    width:90px;
+    height:90px;
+    top:-35px;
+    left:75px;
+}
